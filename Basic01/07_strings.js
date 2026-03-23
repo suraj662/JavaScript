@@ -51,5 +51,14 @@ console.log(url.split('.')); //['ww', 'suraj', 'com/home%20page'] split string i
 //4. Commit your changes by running the command: git commit -m "Initial commit"
 //5. Create a new repository on GitHub by running the command: git remote add origin <repository_url>
 //6. Push your code to GitHub by running the command: git push -u origin master
+//Note: Replace <repository_url> with the URL of your GitHub repository. You can find this URL on the GitHub website after creating a new repository
 //
-//
+//now help me write readme file for this repository -
+
+//everytime push this same repository to github, it will update the readme file with the latest changes in the code and also it will keep track of all the changes made to the code in the repository.
+//steps to pushing changes to github -
+//1. Open terminal and navigate to the directory where your code is located.
+//2.  git add .
+//3.  git commit -m "Updated code"
+//4.  git push
+
