@@ -36,7 +36,7 @@ console.log(Math.random()*10); //any value b/w 0 - 9
 console.log(Math.random()*10 +1); //any value b/w 1 - 9
 
 
-//formula to random min and max
+//formula to get number b/w random min and max
 const min = 10;
 const max = 20;
 // random number b/w min to max
