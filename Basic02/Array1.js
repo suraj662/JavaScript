@@ -51,13 +51,21 @@ console.log(typeof newArr); //string
 
 
 //slice , splice 
-console.log("A" , myArr); //we will use slice and splice method on myArr which is [1,2,3,4,5,6,7,8]
+console.log("A" , myArr); //arr before slice and splice
 //slice method used to extract a portion of the array and return a new array
+
 const myne = myArr.slice(1,3); //[2,3] it will extract element from index 1 to index 3 but not include index 3
+
 console.log(myne); //[2,3]
 console.log("B", myArr); //myArr is not changed it is still [1,2,3,4,5,6,7,8]
 
 //splice method used to add or remove element from the array
 const myne2 = myArr.splice(1,3); //it will remove element from index 1 to index 3 but not include index 3
+
 console.log("C", myArr); //myArr is changed it is now [1,5,6,7,8]
 console.log(myne2); //[2,3,4] it return the removed element in an array
+
+
+//difference between slice and splice
+//slice did not change or manipulate the original array but splice change the original array
+//but splice manipulate the original array and return the removed element in an array
