@@ -61,7 +61,7 @@ const user = [
 console.log(user[1].email);  //suraj@gmail.com - 1st index element as object
 
 
-//to print all keys and  values of object -
+//to print all keys and  values of object or (we can also use loop) -
 console.log(tinderUser);  //{ id: '123', name: 'suraj', isLoggedIn: false }
 console.log(Object.keys(tinderUser)); // 'id', 'name', 'isLoggedIn' ]
 console.log(Object.values(tinderUser)); //[ '123', 'suraj', false ]
@@ -69,7 +69,7 @@ console.log(Object.values(tinderUser)); //[ '123', 'suraj', false ]
 
 //hasOwnproperty method to check key and value exist in object 
 //if yes - return true , if not - return false
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); //
+console.log(tinderUser.hasOwnProperty('isLoggedIn')); //true 
 
 
 
