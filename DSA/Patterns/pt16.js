@@ -1,4 +1,11 @@
 //increasing number of pyramid
+/*
+    1
+   123
+  12345
+ 1234567
+123456789
+*/
 
 function incNumPyramid(n){
     let sp = n-1;

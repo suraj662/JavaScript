@@ -37,13 +37,34 @@ if(isLoggedIn){
 //if(score > 100) console.log("test") , console.log("test1");
 
 
-let balance =1000;
-if(balance < 500){
-    console.log("less than 750");
+// let balance =1000;
+// if(balance < 500){
+//     console.log("less than 750");
+// }
+// else if(balance < 750){
+//     console.log("less than 1000");
+// }
+// else{
+//     console.log("greater than 1000");
+// }
+
+
+
+const isloggedIn = true;
+const  debitCard = true;
+//if all condition is true then only we can buy
+if(isloggedIn && debitCard){
+    console.log("you can buy");
 }
-else if(balance < 750){
-    console.log("less than 1000");
+
+const isLoggedFromGoogle = true;
+const isLoggedFromEmail = false;
+if(isLoggedFromGoogle || isLoggedFromEmail){
+    console.log("you can login");
 }
-else{
-    console.log("greater than 1000");
-}
+
+
+//renedering in react js --
+//this type of condition also used for rendering in react js
+//where user logout option is only show when user is logged in and have token
+
