@@ -1,0 +1,52 @@
+<!--
+    //how node created programmatically in js --
+    // create a new element
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript with Vscode</title>
+</head>
+<body style = "background-color: black; color:white">
+    
+</body>
+<script>
+    //create a new element
+    const div = document.createElement('div');
+    console.log(div);
+    //create class and id for the div
+    div.className = "main";
+    //div.id = "myId";
+    //for creating id we can Math.random()
+    div.id = Math.random()*10 +1; //b/w 1 to 10
+    //set attribute for the div -means we can set any attribute for the div
+    div.setAttribute('title', 'this is a div');
+    //add style for the div
+    div.style.backgroundColor = "lightblue";
+    //add padding for the div
+    div.style.padding = "20px";
+    //div.innerHTML = "javascript with vscode";
+    //all the above steps are for creating a div element and styling it but 
+    //it is not added to the document yet
+    //it is currently in memory but not in the document
+    //all these steps overide the existing div element in memory
+    // but it is not added to the document yet
+    
+    //create text node for div - 
+    const addText = document.createTextNode('javascript with vscode');
+    //add text node to div - means we are adding text node to div element in memory
+    div.appendChild(addText);
+    //now attach or add the div element to the body of the document 
+    //- means we are adding the div element to the document in real
+    document.body.appendChild(div);
+    
+    
+
+
+
+</script>
+</html>

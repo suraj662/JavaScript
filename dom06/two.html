@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript with vscode</title>
+</head>
+<body style = "background-color: black; color:white">
+    <div class = "parent">
+         <div class="day">Monday</div>
+         <div class="day">Tuesday</div>
+         <div class="day">Wednesday</div>
+         <div class="day">Thrusday</div>
+    </div>
+</body>
+<script>
+    const parent =document.querySelector('.parent');
+    //console.log(parent);
+    //now calling children of parent
+    //console.log(parent.children);
+    //calling first child of parent
+    //console.log(parent.children[0]);
+    //print the inner html of first child of parent
+    //console.log(parent.children[0].innerHTML);
+
+
+    //calling all children of parent and print their inner html
+    // for(let i=0; i<parent.children.length; i++){
+    //    console.log(parent.children[i].innerHTML);
+    //} 
+
+    parent.children[1].style.color = "red";
+    //get first and last child of parent
+    //parent to child pe move karnge to first and last child
+    //console.log(parent.firstElementChild);
+    //console.log(parent.lastElementChild);
+
+    //child to parent pe move karnge to first and last child
+    const dayone = document.querySelector('.day');
+    //console.log(dayone);
+    //querySelector is heavy operation as it searches the entire 
+    //document for the first element that matches the specified selector.
+    //console.log(dayone.parentElement);
+    //calling next sibling of dayone
+    //console.log(dayone.nextElementSibling);
+     //calling previous sibling of dayone
+    //console.log(dayone.previousElementSibling);
+    
+    //count number of child nodes of parent
+     console.log("NODES :" ,parent.childNodes);
+
+
+
+</script>
+</html>
