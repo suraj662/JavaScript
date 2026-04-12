@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style = "background-color: black ; color : aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //add event listener to the image with id 'owl' to alert the message 
+    //'You clicked the owl image!' when the image is clicked.
+    //onclick is not good practice but we are using it here for simplicity.
+    //so, use event listener instead of onclick in real projects.
+    //bcoz it allows for propagation and better separation of concerns.
+    //means, you can add multiple event listeners to the same element and they will all work.
+
+
+    //document.getElementById('owl').onclick = function() {
+    //    alert('you clicked the owl image!');
+    //}
+
+    //event listener gives many feature like drag and drop, mouseover, mouseout, keydown, keyup, etc. 
+    //which are not possible with onclick.
+    
+    //other options are --
+    //attachEvent on Internet Explorer
+    //Jquery's on method
+
+    //false is the default value for the third parameter of addEventListener, which means that the event will be 
+    //captured in the bubbling phase.
+    //document.getElementById('owl').addEventListener('click' , function(e) { 
+         //alert('you clicked owl image again!');
+    //    console.log(e);
+    // } , false);
+    
+
+    //event Propagation is the process by which an event travels through the DOM tree.
+    //it has two context - event capturing and event bubbling.
+    //how events propagation works ? and how to stop it ?
+    
+
+    //in general , events from inside to outside are called bubbling
+    // document.getElementById('images').addEventListener('click' , function(e) { 
+     //   console.log('clicked inside ul');
+    // } , false);
+
+
+    //document.getElementById('owl').addEventListener('click' , function(e) { 
+    //    console.log('you clicked owl image');
+    // } , false); 
+
+
+     //events from outside to inside are called capturing, by giving true as the third parameter of addEventListener,
+     // we can capture the event in the capturing phase.
+     // document.getElementById('images').addEventListener('click' , function(e) { 
+     //   console.log('clicked inside ul');
+    // } , true);
+
+
+    //document.getElementById('owl').addEventListener('click' , function(e) { 
+    //    console.log('you clicked owl image');
+    // } , true);
+
+
+     //sometimes , inner element and outer element are separated by some other element, 
+     //in that case, event will not propagate to the outer element.
+     //in that case, we can use event.stopPropagation() to stop the event from propagating to the outer element.
+    //ye inner propagation ko stop karega, but outer element will still receive the event.
+    // document.getElementById('owl').addEventListener('click' , function(e) { 
+    //    console.log('you clicked owl image');
+    //    e.stopPropagation();
+    // } , false);
+
+     //now, i click on google but it want that doesn't work --
+     //using preventDefault() method, we can prevent the default action of the event from happening.
+     //document.getElementById('google').addEventListener('click' , function(e) { 
+     //   e.preventDefault();
+    //    e.stopPropagation();
+    //    console.log('you clicked google link');
+    // } , false);
+
+
+    //task - when i click on any image, image got disappear --
+    //document.querySelector('#images').addEventListener('click' , function(e) {
+        //console.log(e.target);
+        //to remove the alies of images 
+        //use parentNode
+        //console.log(e.target.parentNode);
+        //to remove this --
+    //    let removeIt = e.target.parentNode;
+        //removeIt.remove();
+        //or we can use removeChild method of parent node to remove the child node.
+    //    removeIt.parentNode.removeChild(removeIt);
+    //})
+
+    //when i click on end of li , all images disappear, but when i click on image, only that image disappear, why ?
+        //use tagName with target 
+    document.querySelector('#images').addEventListener('click' , function(e) {
+        console.log(e.target.tagName);
+        if(e.target.tagName == 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+        removeIt.remove();
+        }
+    });
+
+    //Imp. topics to study in PointerEvents are --
+    //type, target , defaultPrevent ,
+    //timestamp , toElement , srcElement , currentTarget 
+    //clientX , clientY , pageX , pageY , screenX , screenY , offsetX , offsetY
+    //altKey , ctrlKey , shiftKey , button , buttons ,KeyCode 
+
+    
+</script>
+</html>
