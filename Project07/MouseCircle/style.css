@@ -1,0 +1,425 @@
+/* ============================================
+   CUSTOM CURSOR PROJECT - COMPLETE STYLES
+   ============================================ */
+
+/* 🎨 Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Inter:wght@300;400;600&display=swap');
+
+/* ============================================
+   CSS RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  background-color: #000;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor */
+  position: relative;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.6rem 1.8rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.nav-link:hover {
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+.nav-link:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   MAIN CONTENT CONTAINER
+   ============================================ */
+.container {
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+/* ============================================
+   HEADING STYLES
+   ============================================ */
+h1 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-out;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   PARAGRAPH STYLES
+   ============================================ */
+p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+p:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+p:nth-of-type(2) {
+  animation-delay: 0.4s;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+button {
+  position: relative;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  cursor: none; /* Custom cursor handles this */
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 1s ease-out 0.6s both;
+  z-index: 1;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+button:hover {
+  border-color: transparent;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* ============================================
+   CUSTOM CURSOR STYLES
+   ============================================ */
+div.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: #ffff00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: none; /* Critical: allows clicks to pass through */
+  z-index: 9999;
+  mix-blend-mode: normal;
+  transition: 
+    width 0.3s ease,
+    height 0.3s ease,
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  box-shadow: 
+    0 0 20px rgba(255, 255, 0, 0.5),
+    0 0 40px rgba(255, 255, 0, 0.3),
+    0 0 60px rgba(255, 255, 0, 0.1);
+}
+
+/* Cursor glow effect */
+div.cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.3;
+  filter: blur(8px);
+  z-index: -1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Cursor when hovering interactive elements */
+div.cursor.hover {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  mix-blend-mode: difference;
+}
+
+/* Cursor when clicking */
+div.cursor.clicking {
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: transform 0.1s ease;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0.1;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar {
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .container {
+    padding: 7rem 1.5rem 3rem;
+  }
+  
+  p {
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+  
+  button {
+    padding: 0.9rem 2.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  h1 {
+    letter-spacing: 1px;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================
+   MOBILE & TOUCH DEVICES
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto; /* Show default cursor on touch devices */
+  }
+  
+  div.cursor {
+    display: none; /* Hide custom cursor on mobile */
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .nav-link {
+    cursor: pointer;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   FOCUS STATES (Keyboard Navigation)
+   ============================================ */
+.nav-link:focus,
+button:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 3px;
+}
+
+.nav-link:focus-visible,
+button:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 3px;
+}
+
+/* ============================================
+   SCROLLBAR STYLING (Webkit)
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ============================================
+   SELECTION COLOR
+   ============================================ */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #fff;
+}

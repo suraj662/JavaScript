@@ -1,5 +1,3 @@
-// typer.js
-
 // 🔍 Get the elements we need
 const typedTextSpan = document.querySelector('.typed-text');
 const cursor = document.querySelector('.cursor');
